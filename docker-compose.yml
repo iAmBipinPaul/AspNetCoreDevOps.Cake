@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    container_name: travis_db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1q2w3e
+      - POSTGRES_DB=travisdb
+    ports:
+      - "1234:5432"

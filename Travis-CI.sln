@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C3101B64-83E1-4985-BF49-9368BF7B29B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2269EF1A-5A03-4AFC-A01B-1E15A336167C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{205A63FB-B6BB-42DD-B729-AE8C94953ECD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travis-CI.Api", "src\Travis-CI.Api\Travis-CI.Api.csproj", "{F7AD2763-7EFC-4E63-B57B-552E3B9C88AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travis-CI.Seeder", "tools\Travis-CI.Seeder\Travis-CI.Seeder.csproj", "{2AED53AE-729E-4879-BAC9-F33B3B0C7E33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravisCI.Tests.Core", "test\TravisCI.Tests.Core\TravisCI.Tests.Core.csproj", "{1600D16B-6291-4A2A-B55B-A44B98311E91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravicCI.Controllers.Tests", "test\TravicCI.Controllers.Tests\TravicCI.Controllers.Tests.csproj", "{6B3A50D7-DC36-413F-84DD-5BA1234CC93C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{718C2E3B-DF1A-47C9-9DEB-A654B8D22E1C}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+		deploy.sh = deploy.sh
+		docker-compose.yml = docker-compose.yml
+		dockerfile = dockerfile
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7AD2763-7EFC-4E63-B57B-552E3B9C88AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7AD2763-7EFC-4E63-B57B-552E3B9C88AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7AD2763-7EFC-4E63-B57B-552E3B9C88AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7AD2763-7EFC-4E63-B57B-552E3B9C88AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AED53AE-729E-4879-BAC9-F33B3B0C7E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AED53AE-729E-4879-BAC9-F33B3B0C7E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AED53AE-729E-4879-BAC9-F33B3B0C7E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AED53AE-729E-4879-BAC9-F33B3B0C7E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1600D16B-6291-4A2A-B55B-A44B98311E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1600D16B-6291-4A2A-B55B-A44B98311E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1600D16B-6291-4A2A-B55B-A44B98311E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1600D16B-6291-4A2A-B55B-A44B98311E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B3A50D7-DC36-413F-84DD-5BA1234CC93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B3A50D7-DC36-413F-84DD-5BA1234CC93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B3A50D7-DC36-413F-84DD-5BA1234CC93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B3A50D7-DC36-413F-84DD-5BA1234CC93C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7AD2763-7EFC-4E63-B57B-552E3B9C88AF} = {C3101B64-83E1-4985-BF49-9368BF7B29B1}
+		{2AED53AE-729E-4879-BAC9-F33B3B0C7E33} = {205A63FB-B6BB-42DD-B729-AE8C94953ECD}
+		{1600D16B-6291-4A2A-B55B-A44B98311E91} = {2269EF1A-5A03-4AFC-A01B-1E15A336167C}
+		{6B3A50D7-DC36-413F-84DD-5BA1234CC93C} = {2269EF1A-5A03-4AFC-A01B-1E15A336167C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EA9FE73-A93A-406D-878E-8D3E20F02347}
+	EndGlobalSection
+EndGlobal
