@@ -1,22 +1,29 @@
 trigger:
 - master
-
 jobs:
-
 - job: Linux
-  pool:
-    vmImage: 'ubuntu-16.04'
-  steps:
-  - script: dotnet build
-
-
-
+   pool:
+     vmImage: 'Ubuntu 16.04'   
+   variables:
+     buildConfiguration: 'Release'
+     imageName: 'dotnetcore:$(Build.BuildId)'   
+   steps:
+   - script: |
+       docker-compose up -d --build
+       dotnet restore
+       dotnet build
+       cd test/TravicCI.Controllers.Tests
+       dotnet test
+       cd ..
+       cd ..
+       docker login  $(dockerId).azurecr.io -u  $(dockerId) -p $(dockerPassword)
+       docker build -f dockerfile -t $(dockerId).azurecr.io/$(imageName) .
+       docker push $(dockerId).azurecr.io/$(imageName) 
 - job: macOS
   pool:
     vmImage: 'xcode9-macos10.13'
   steps:
   - script: dotnet build
-
 - job: Windows
   pool:
     vmImage: 'vs2017-win2017'
