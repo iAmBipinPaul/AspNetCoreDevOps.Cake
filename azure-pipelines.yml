@@ -26,6 +26,6 @@ jobs:
   - script: dotnet build
 - job: Windows
   pool:
-    vmImage: 'vs2017-win2017'
+    vmImage: 'vs2017-win2016'
   steps:
   - script: dotnet build
