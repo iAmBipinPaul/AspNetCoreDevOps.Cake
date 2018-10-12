@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{718C2E3B-DF1A-47C9-9DEB-A654B8D22E1C}"
 	ProjectSection(SolutionItems) = preProject
 		.travis.yml = .travis.yml
+		azure-pipelines.yml = azure-pipelines.yml
 		deploy.sh = deploy.sh
 		docker-compose.yml = docker-compose.yml
 		dockerfile = dockerfile
