@@ -5,8 +5,7 @@ jobs:
   pool:
      vmImage: 'Ubuntu 16.04'   
      variables:
-     buildConfiguration: 'Release'
-     imageName: 'dotnetcore'   
+     buildConfiguration: 'Release' 
   steps:
   - script: |
        docker-compose up -d --build
@@ -17,8 +16,8 @@ jobs:
        cd ..
        cd ..
        docker login  $(dockerId).azurecr.io -u  $(dockerId) -p $(dockerPassword)
-       docker build -f dockerfile -t $(dockerId).azurecr.io/$(imageName) .
-       docker push $(dockerId).azurecr.io/$(imageName) 
+       docker build -f dockerfile -t $(dockerId).azurecr.io/$(Build.BuildId) .
+       docker push $(dockerId).azurecr.io/$(Build.BuildId) 
 - job: macOS
   pool:
     vmImage: 'xcode9-macos10.13'
