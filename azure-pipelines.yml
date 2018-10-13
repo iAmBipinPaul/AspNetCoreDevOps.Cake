@@ -2,13 +2,13 @@ trigger:
 - master
 jobs:
 - job: Linux
-   pool:
+  pool:
      vmImage: 'Ubuntu 16.04'   
-   variables:
+     variables:
      buildConfiguration: 'Release'
      imageName: 'dotnetcore'   
-   steps:
-   - script: |
+  steps:
+  - script: |
        docker-compose up -d --build
        dotnet restore
        dotnet build
