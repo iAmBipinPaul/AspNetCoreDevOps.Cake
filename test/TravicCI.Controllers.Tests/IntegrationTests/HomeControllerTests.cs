@@ -20,9 +20,9 @@ namespace TravicCI.Controllers.Tests.IntegrationTests
             base.SetUp();
            
         }
-
+         
         [Test]
-        public async Task GetPeopleSucessfullyAsync()
+        public async Task GetPeopleSuccessfullyAsync()
         {           
             HttpResponseMessage response = await _client.GetAsync($"Home/index");
             var people = new List<Person>();

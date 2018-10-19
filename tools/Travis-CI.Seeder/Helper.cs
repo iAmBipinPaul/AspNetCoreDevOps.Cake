@@ -33,8 +33,8 @@ namespace Travis_CI.Seeder
                       connectionString
                   )
                   .UseInternalServiceProvider(serviceProvider);
-            var _context = serviceProvider.GetService<ApplicationDbContext>();           
-            return _context;
+            var context = serviceProvider.GetService<ApplicationDbContext>();           
+            return context;
         }
     }
 }

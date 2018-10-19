@@ -16,9 +16,6 @@ namespace TravicCI.Controllers.Tests
         protected TestServer _server;
         protected HttpClient _client, _client2;
 
-
-      
-
         public override void SetUp()
         {
             base.SetUp();
@@ -30,9 +27,6 @@ namespace TravicCI.Controllers.Tests
     )
 
                 .UseStartup<Startup>());
-
-
-
 
             _client = _server.CreateClient();
             _client.BaseAddress = new Uri("https://localhost");
