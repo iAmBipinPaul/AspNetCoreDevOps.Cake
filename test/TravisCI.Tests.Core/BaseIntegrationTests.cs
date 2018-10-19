@@ -1,15 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using NUnit.Framework;
 using Travis_CI.Api.Data;
 using Travis_CI.Seeder;
 
 namespace TravisCI.Tests.Core
 {
     public abstract class BaseIntegrationTests
-    {      
+    {
         protected ApplicationDbContext Context;
+
         public virtual void SetUp()
         {
             var helper = new Helper();
@@ -18,7 +19,7 @@ namespace TravisCI.Tests.Core
             result.Database.EnsureDeleted();
 
             Context = result;
-           
+
 
             Console.WriteLine("Applying Migrations");
             result.Database.Migrate();
@@ -35,12 +36,12 @@ namespace TravisCI.Tests.Core
 
             Console.WriteLine("Database successfully seeded");
             var totalTopic = result.People.ToList();
-            Console.WriteLine($"Total People seeded is {totalTopic.Count()}");          
+            Console.WriteLine($"Total People seeded is {totalTopic.Count()}");
         }
 
         [TearDown]
         public virtual void TearDown()
-        {           
+        {
             Context.Database.EnsureDeleted();
         }
     }

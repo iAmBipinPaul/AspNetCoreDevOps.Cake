@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Travis_CI.Seeder
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var helper = new Helper();
             var result = helper.GetContextAdnUserManager();

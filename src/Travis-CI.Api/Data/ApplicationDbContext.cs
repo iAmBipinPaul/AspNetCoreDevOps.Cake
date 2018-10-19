@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Travis_CI.Api.Models;
 
@@ -14,6 +11,6 @@ namespace Travis_CI.Api.Data
         {
         }
 
-        public DbSet<Person> People  { get; set; }
+        public DbSet<Person> People { get; set; }
     }
 }
