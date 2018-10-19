@@ -19,7 +19,16 @@ jobs:
        docker login  $(dockerId).azurecr.io -u  $(dockerId) -p $(dockerPassword)
        docker build -f dockerfile -t $(dockerId).azurecr.io/$(Build.BuildId) .
        docker push $(dockerId).azurecr.io/$(Build.BuildId)
-       bash deploy.azure-pipelines.sh
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker --version'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker kill dev_api'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker rm dev_api'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker kill dev_elasticsearch'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker rm dev_elasticsearch'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker kill dev_db'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker rm dev_db'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker kill dev_pgadmin'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker rm dev_pgadmin'
+       sshpass -p $(VmPassword) ssh -o StrictHostKeyChecking=no $(VmUser)@$(VmHost) 'sudo docker-compose -f dev/docker-compose.yml up -d --build'
 - job: macOS
   pool:
     vmImage: 'xcode9-macos10.13'
