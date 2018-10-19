@@ -8,7 +8,7 @@ jobs:
      buildConfiguration: 'Release' 
   steps:
   - script: |
-       apt-get install sshpass
+       sudo apt-get install sshpass
        docker-compose up -d --build
        dotnet restore
        dotnet build
