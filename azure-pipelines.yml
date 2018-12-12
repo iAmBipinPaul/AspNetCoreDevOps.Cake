@@ -7,6 +7,9 @@ jobs:
      variables:
      buildConfiguration: 'Release' 
   steps:
+   - task: DotNetCoreInstaller@0
+     inputs:
+       version: '2.2.100' # replace this value with the version that you need for your project
   - script: |
        sudo apt-get install sshpass
        docker-compose up -d --build
@@ -45,4 +48,3 @@ jobs:
     inputs:
       version: '2.2.100' # replace this value with the version that you need for your projec
   - script: dotnet build
-  
