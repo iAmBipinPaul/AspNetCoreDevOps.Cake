@@ -10,7 +10,7 @@ jobs:
    - task: DotNetCoreInstaller@0
      inputs:
        version: '2.2.100' # replace this value with the version that you need for your project
-  - script: |
+   - script: |
        sudo apt-get install sshpass
        docker-compose up -d --build
        dotnet restore
