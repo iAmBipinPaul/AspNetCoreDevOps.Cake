@@ -1,9 +1,9 @@
-﻿using Faker;
+﻿using AspNetCoreDevOps.Api.Data;
+using AspNetCoreDevOps.Api.Models;
+using Faker;
 using FizzWare.NBuilder;
-using Travis_CI.Api.Data;
-using Travis_CI.Api.Models;
 
-namespace Travis_CI.Seeder
+namespace AspNetCoreDevOps.Seeder
 {
     public class Data
     {

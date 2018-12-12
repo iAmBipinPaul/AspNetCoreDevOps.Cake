@@ -2,10 +2,10 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using Travis_CI.Api.Data;
-using Travis_CI.Seeder;
+using AspNetCoreDevOps.Api.Data;
+using AspNetCoreDevOps.Seeder;
 
-namespace TravisCI.Tests.Core
+namespace AspNetCoreDevOps.Tests.Core
 {
     public abstract class BaseIntegrationTests
     {

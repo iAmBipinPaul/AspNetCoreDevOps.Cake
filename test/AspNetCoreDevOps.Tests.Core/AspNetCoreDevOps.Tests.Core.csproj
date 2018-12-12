@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\tools\Travis-CI.Seeder\Travis-CI.Seeder.csproj" />
+    <ProjectReference Include="..\..\tools\AspNetCoreDevOps.Seeder\AspNetCoreDevOps.Seeder.csproj" />
   </ItemGroup>
 
 </Project>

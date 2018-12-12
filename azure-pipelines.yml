@@ -12,7 +12,7 @@ jobs:
        docker-compose up -d --build
        dotnet restore
        dotnet build
-       cd test/TravicCI.Controllers.Tests
+       cd test/AspNetCoreDevOps.Controllers.Tests
        dotnet test
        cd ..
        cd ..

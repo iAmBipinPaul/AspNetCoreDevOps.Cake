@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Travis_CI.Api.Data;
+using AspNetCoreDevOps.Api.Data;
 
-namespace Travis_CI.Seeder
+namespace AspNetCoreDevOps.Seeder
 {
     public class Helper
     {
@@ -18,7 +18,7 @@ namespace Travis_CI.Seeder
             var connectionString = configuration["ConnectionStrings:DefaultConnection"];
             Console.WriteLine($"Using Connection string: {connectionString}");
             services.AddDbContext<ApplicationDbContext>(
-                opts => { opts.UseNpgsql(connectionString, b => b.MigrationsAssembly("Travis-CI.Api")); }
+                opts => { opts.UseNpgsql(connectionString, b => b.MigrationsAssembly("AspNetCoreDevOps.Api")); }
             );
             var serviceProvider = services.BuildServiceProvider();
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();

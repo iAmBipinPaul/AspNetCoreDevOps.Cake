@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C3101B64-83E1-4985-BF49-9368BF7B29B1}"
 EndProject
@@ -9,19 +9,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2269EF1A-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{205A63FB-B6BB-42DD-B729-AE8C94953ECD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travis-CI.Api", "src\Travis-CI.Api\Travis-CI.Api.csproj", "{F7AD2763-7EFC-4E63-B57B-552E3B9C88AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreDevOps.Api", "src\AspNetCoreDevOps.Api\AspNetCoreDevOps.Api.csproj", "{F7AD2763-7EFC-4E63-B57B-552E3B9C88AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travis-CI.Seeder", "tools\Travis-CI.Seeder\Travis-CI.Seeder.csproj", "{2AED53AE-729E-4879-BAC9-F33B3B0C7E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreDevOps.Seeder", "tools\AspNetCoreDevOps.Seeder\AspNetCoreDevOps.Seeder.csproj", "{2AED53AE-729E-4879-BAC9-F33B3B0C7E33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravisCI.Tests.Core", "test\TravisCI.Tests.Core\TravisCI.Tests.Core.csproj", "{1600D16B-6291-4A2A-B55B-A44B98311E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreDevOps.Tests.Core", "test\AspNetCoreDevOps.Tests.Core\AspNetCoreDevOps.Tests.Core.csproj", "{1600D16B-6291-4A2A-B55B-A44B98311E91}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravicCI.Controllers.Tests", "test\TravicCI.Controllers.Tests\TravicCI.Controllers.Tests.csproj", "{6B3A50D7-DC36-413F-84DD-5BA1234CC93C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreDevOps.Controllers.Tests", "test\AspNetCoreDevOps.Controllers.Tests\AspNetCoreDevOps.Controllers.Tests.csproj", "{6B3A50D7-DC36-413F-84DD-5BA1234CC93C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{718C2E3B-DF1A-47C9-9DEB-A654B8D22E1C}"
 	ProjectSection(SolutionItems) = preProject
 		.travis.yml = .travis.yml
 		azure-pipelines.yml = azure-pipelines.yml
-		deploy.azure-pipelines.sh = deploy.azure-pipelines.sh
 		deploy.sh = deploy.sh
 		docker-compose.yml = docker-compose.yml
 		dockerfile = dockerfile

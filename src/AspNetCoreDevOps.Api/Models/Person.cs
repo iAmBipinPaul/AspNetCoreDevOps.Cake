@@ -1,4 +1,4 @@
-﻿namespace Travis_CI.Api.Models
+﻿namespace AspNetCoreDevOps.Api.Models
 {
     public class Person
     {

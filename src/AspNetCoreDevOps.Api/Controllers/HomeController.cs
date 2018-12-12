@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Travis_CI.Api.Data;
-using Travis_CI.Api.Models;
+using AspNetCoreDevOps.Api.Data;
+using AspNetCoreDevOps.Api.Models;
 
-namespace Travis_CI.Api.Controllers
+namespace AspNetCoreDevOps.Api.Controllers
 {
     public class HomeController : Controller
     {

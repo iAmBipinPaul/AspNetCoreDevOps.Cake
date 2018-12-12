@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using Travis_CI.Api.Models;
+using AspNetCoreDevOps.Api.Models;
 
-namespace TravicCI.Controllers.Tests.IntegrationTests
+namespace AspNetCoreDevOps.Controllers.Tests.IntegrationTests
 {
     [TestFixture]
     internal class HomeControllerTests : BaseControllerTests

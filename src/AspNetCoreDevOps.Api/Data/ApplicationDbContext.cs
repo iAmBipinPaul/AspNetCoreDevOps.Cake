@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Travis_CI.Api.Models;
+using AspNetCoreDevOps.Api.Models;
 
-namespace Travis_CI.Api.Data
+namespace AspNetCoreDevOps.Api.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

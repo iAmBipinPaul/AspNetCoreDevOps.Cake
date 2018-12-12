@@ -1,6 +1,6 @@
 sudo: required
 language: csharp
-solution: Travis-CI.sln
+solution: AspNetCoreDevOps.sln
 dotnet: 2.2.100
 addons:
   apt:
@@ -13,7 +13,7 @@ before_install:
 script:
   - dotnet restore
   - dotnet build
-  - cd test/TravicCI.Controllers.Tests
+  - cd test/AspNetCoreDevOps.Controllers.Tests
   - dotnet test
   - cd ..
   - cd ..

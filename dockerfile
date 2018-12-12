@@ -3,10 +3,10 @@ WORKDIR /app
 COPY . .
 RUN dotnet restore
 RUN dotnet build
-WORKDIR /app/src/Travis-CI.Api
+WORKDIR /app/src/AspNetCoreDevOps.Api
 RUN dotnet publish -c  Release -o output
 
 FROM microsoft/dotnet:2.2.0-aspnetcore-runtime-alpine3.8
 WORKDIR output
-COPY --from=buildimg /app/src/Travis-CI.Api/output .
-ENTRYPOINT ["dotnet","Travis-CI.Api.dll"]
+COPY --from=buildimg /app/src/AspNetCoreDevOps.Api/output .
+ENTRYPOINT ["dotnet","AspNetCoreDevOps.Api.dll"]

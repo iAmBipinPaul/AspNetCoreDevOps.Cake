@@ -4,10 +4,9 @@ using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
-using TravisCI.Tests.Core;
-using Travis_CI.Api;
-
-namespace TravicCI.Controllers.Tests
+using AspNetCoreDevOps.Tests.Core;
+using AspNetCoreDevOps.Api;
+namespace AspNetCoreDevOps.Controllers.Tests
 {
     public class BaseControllerTests : BaseIntegrationTests
     {

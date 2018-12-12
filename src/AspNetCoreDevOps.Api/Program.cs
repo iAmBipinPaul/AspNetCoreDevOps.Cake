@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Travis_CI.Api
+namespace AspNetCoreDevOps.Api
 {
     public class Program
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace Travis_CI.Seeder
+namespace AspNetCoreDevOps.Seeder
 {
     internal class Program
     {
