@@ -12,7 +12,6 @@ jobs:
        version: '2.2.100' # replace this value with the version that you need for your project
    - script: |
        sudo apt-get install sshpass
-       docker-compose up -d --build
        dotnet tool install -g Cake.Tool
        dotnet cake build.cake
        docker login  $(dockerId).azurecr.io -u  $(dockerId) -p $(dockerPassword)
