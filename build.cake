@@ -4,23 +4,17 @@
 var target = Argument("target", "Test");
 var configuration = Argument("configuration", "Release");
 
-
-
-
 Task("DockerCompose")
 .Does(() => {
-
-   DockerComposeUp(new DockerComposeUpSettings{ForceRecreate=true,DetachedMode=true,Build=true});
-   Information("Hello Cake!");
+   DockerComposeUp(new DockerComposeUpSettings{ForceRecreate=true,DetachedMode=true,Build=true});   
 });
-
-
 
 Task("Restore")
     .Does(() =>
 {
     DotNetCoreRestore(Paths.SolutionFile.FullPath);
-});	
+});
+	
 Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
