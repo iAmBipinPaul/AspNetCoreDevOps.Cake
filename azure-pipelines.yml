@@ -13,12 +13,8 @@ jobs:
    - script: |
        sudo apt-get install sshpass
        docker-compose up -d --build
-       dotnet restore
-       dotnet build
-       cd test/AspNetCoreDevOps.Controllers.Tests
-       dotnet test
-       cd ..
-       cd ..
+       dotnet tool install -g Cake.Tool
+       dotnet cake build.cake
        docker login  $(dockerId).azurecr.io -u  $(dockerId) -p $(dockerPassword)
        docker build -f dockerfile -t $(dockerId).azurecr.io/$(Build.BuildId) .
        docker push $(dockerId).azurecr.io/$(Build.BuildId)
