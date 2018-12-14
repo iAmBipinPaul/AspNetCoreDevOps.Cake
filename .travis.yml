@@ -1,7 +1,7 @@
 sudo: required
 language: csharp
 solution: AspNetCoreDevOps.sln
-dotnet: 2.2.100
+dotnet: 2.2.100-sdk-bionic
 addons:
   apt:
     packages:
