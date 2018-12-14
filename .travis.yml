@@ -1,7 +1,7 @@
 sudo: required
 language: csharp
 solution: AspNetCoreDevOps.sln
-dotnet: 2.3.0-sdk
+dotnet: 3.0-sdk
 addons:
   apt:
     packages:
