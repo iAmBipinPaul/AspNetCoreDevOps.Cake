@@ -3,12 +3,14 @@ image: ubuntu
 branches:
   only:
   - master
+services:
+- docker
 install:
   # Install repo specific stuff here
 
 before_build:
-  - cmd: dotnet --version
+  -  dotnet --version
 build_script:
-  - cmd: dotnet tool install -g Cake.Tool
-  - cmd: dotnet cake build.cake
+  -  dotnet tool install -g Cake.Tool
+  -  dotnet cake build.cake
 deploy: off
