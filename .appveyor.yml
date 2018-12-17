@@ -6,12 +6,14 @@ branches:
 services:
 - docker
 install:
+  - sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  - sudo chmod +x /usr/local/bin/docker-compose
   # Install repo specific stuff here
 
 before_build:
   -  dotnet --version
   -  docker version
-  -  docker-compose
+  -  docker-compose -v
 build_script:
   -  dotnet tool install -g Cake.Tool
   -  dotnet cake build.cake
