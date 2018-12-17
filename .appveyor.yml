@@ -1,11 +1,8 @@
 ﻿version: '1.0.{build}'
-image: Visual Studio 2017
+image: ubuntu
 branches:
   only:
   - master
-init:
-  # Good practise, because Windows line endings are different from Unix/Linux ones
-  - cmd: git config --global core.autocrlf true
 install:
   # Install repo specific stuff here
 
