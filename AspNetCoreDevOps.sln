@@ -19,6 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreDevOps.Controller
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{718C2E3B-DF1A-47C9-9DEB-A654B8D22E1C}"
 	ProjectSection(SolutionItems) = preProject
+		.appveyor.yml = .appveyor.yml
 		.travis.yml = .travis.yml
 		azure-pipelines.yml = azure-pipelines.yml
 		deploy.sh = deploy.sh

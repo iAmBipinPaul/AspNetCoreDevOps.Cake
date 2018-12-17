@@ -4,11 +4,21 @@
 
 var target = Argument("target", "DockerPush");
 var configuration = Argument("configuration", "Release");
- var buildId = EnvironmentVariable("BUILD_BUILDID");
-        if(string.IsNullOrEmpty(buildId))
-        {
-            throw new Exception("Could not get buildId environment variable");
-        }
+var buildId ="";
+var branch="";
+if(BuildSystem.TFBuild.IsRunningOnVSTS)
+{
+   branch=BuildSystem.TFBuild.Environment.Repository.Branch;
+   buildId= (BuildSystem.TFBuild.Environment.Build.Id).ToString();
+}
+if(BuildSystem.AppVeyor.IsRunningOnAppVeyor)
+{     branch=BuildSystem.AppVeyor.Environment.Repository.Branch;
+      buildId=  BuildSystem.AppVeyor.Environment.Build.Id; 
+}
+if(string.IsNullOrEmpty(buildId))
+{
+ throw new Exception("Could not get buildId environment variable");
+}
 Task("DockerCompose")
 .Does(() => {
    DockerComposeUp(new DockerComposeUpSettings{ForceRecreate=true,DetachedMode=true,Build=true});   
@@ -38,7 +48,6 @@ Task("DockerBuild")
 Task("DockerTag")
    .IsDependentOn("DockerBuild")
     .Does(() => {      
- string branch=BuildSystem.TFBuild.Environment.Repository.Branch;
  bool IsMasterBrach = StringComparer.OrdinalIgnoreCase.Equals("master", branch);
  string tag="";
 if(IsMasterBrach)
