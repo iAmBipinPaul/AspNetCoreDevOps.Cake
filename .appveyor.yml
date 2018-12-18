@@ -1,8 +1,8 @@
-﻿version: '1.0.{build}'
+version: '1.0.{build}'
 image: ubuntu
-branches:
-  only:
-  - master
+environment:
+   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+   DOTNET_CLI_TELEMETRY_OPTOUT: 1
 services:
 - docker
 install:
@@ -12,15 +12,10 @@ install:
   - sudo dpkg -i packages-microsoft-prod.deb
   - sudo apt-get install apt-transport-https
   - sudo apt-get update
-  - echo 'Y'
-  - sudo apt-get install dotnet-sdk-2.2
+  - sudo apt-get -y install dotnet-sdk-2.2
   # Install repo specific stuff here
-
 before_build:
-  -  dotnet --version
-  -  docker version
-  -  docker-compose -v
-build_script:
   -  dotnet tool install -g Cake.Tool
+build_script:
   -  dotnet cake build.cake
 deploy: off
