@@ -12,6 +12,7 @@ install:
   - sudo dpkg -i packages-microsoft-prod.deb
   - sudo apt-get install apt-transport-https
   - sudo apt-get update
+  - echo 'Y'
   - sudo apt-get install dotnet-sdk-2.2
   # Install repo specific stuff here
 
