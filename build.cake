@@ -8,12 +8,18 @@ var buildId ="";
 var branch="";
 if(BuildSystem.TFBuild.IsRunningOnVSTS)
 {
-   branch=BuildSystem.TFBuild.Environment.Repository.Branch;
+   branch= $"VSTS{BuildSystem.TFBuild.Environment.Repository.Branch}";
    buildId= (BuildSystem.TFBuild.Environment.Build.Id).ToString();
 }
 if(BuildSystem.AppVeyor.IsRunningOnAppVeyor)
-{     branch=BuildSystem.AppVeyor.Environment.Repository.Branch;
-      buildId=  BuildSystem.AppVeyor.Environment.Build.Id; 
+{     branch=$"AppVeyor{BuildSystem.AppVeyor.Environment.Repository.Branch}";
+      buildId= BuildSystem.AppVeyor.Environment.Build.Id; 
+}
+
+if (BuildSystem.TravisCI.IsRunningOnTravisCI)
+{          
+     branch= $"TravisCI{BuildSystem.TravisCI.Environment.Build.Branch}";            
+     buildId= BuildSystem.TravisCI.Environment.Build.BuildId;
 }
 if(string.IsNullOrEmpty(buildId))
 {
@@ -48,17 +54,15 @@ Task("DockerBuild")
 Task("DockerTag")
    .IsDependentOn("DockerBuild")
     .Does(() => {      
- bool IsMasterBrach = StringComparer.OrdinalIgnoreCase.Equals("master", branch);
+ bool IsVSTSMasterBrach = StringComparer.OrdinalIgnoreCase.Equals("VSTSmaster", branch);
  string tag="";
-if(IsMasterBrach)
+if(IsVSTSMasterBrach && BuildSystem.TFBuild.IsRunningOnVSTS)
 {
 tag="latest";
 }else
-{
-    
+{    
    tag=$"{branch}-{buildId}";
 }
-
    DockerTag($"{Docker.Username}/{Docker.Repository}:{buildId}",$"{Docker.Username}/{Docker.Repository}:{tag}");   
 });
 
