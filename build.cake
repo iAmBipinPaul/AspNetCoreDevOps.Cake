@@ -23,7 +23,8 @@ if (BuildSystem.TravisCI.IsRunningOnTravisCI)
 }
 if(string.IsNullOrEmpty(buildId))
 {
- throw new Exception("Could not get buildId environment variable");
+    buildId="github-action";
+    branch="master";
 }
 Task("DockerCompose")
 .Does(() => {
