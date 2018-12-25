@@ -38,3 +38,13 @@ action "run cake build " {
   args = "dotnet cake build.cake"
   secrets = ["DOCKER_PASSWORD"]
 }
+
+workflow "docker compose action test" {
+  on = "push"
+  resolves = ["run docker compose"]
+}
+
+action "run docker compose" {
+  uses = "docker://iambipinpaul/dotnetdockercake:latest"
+  args = "docker-compose up -d --build"
+}
