@@ -18,7 +18,6 @@ namespace AspNetCoreDevOps.Controllers.Tests
         {
             base.SetUp();
             Server = new TestServer(new WebHostBuilder()
-                .UseEnvironment("Testing")
                 .UseConfiguration(new ConfigurationBuilder()
                     .AddJsonFile("appsettings.json")
                     .Build()
