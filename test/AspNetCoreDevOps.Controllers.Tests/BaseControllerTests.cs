@@ -28,11 +28,6 @@ namespace AspNetCoreDevOps.Controllers.Tests
             Client.BaseAddress = new Uri("https://localhost");
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            Client2 = Server.CreateClient();
-            Client2.BaseAddress = new Uri("https://localhost");
-            Client2.DefaultRequestHeaders.Accept.Clear();
-            Client2.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
     }
 }
