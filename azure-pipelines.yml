@@ -1,10 +1,8 @@
-jobs:
-- job: Linux
-  pool:
+pool:
      vmImage: 'Ubuntu 16.04'   
      variables:
      buildConfiguration: 'Release' 
-  steps:
+ steps:
    - task: DotNetCoreInstaller@0
      inputs:
        version: '2.2.100' # replace this value with the version that you need for your project
@@ -12,19 +10,3 @@ jobs:
        sudo apt-get install sshpass
        dotnet tool install -g Cake.Tool
        dotnet cake build.cake
-- job: macOS
-  pool:
-    vmImage: 'xcode9-macos10.13'
-  steps:
-  - task: DotNetCoreInstaller@0
-    inputs:
-      version: '2.2.100' # replace this value with the version that you need for your project
-  - script: dotnet build
-- job: Windows
-  pool:
-    vmImage: 'vs2017-win2016'
-  steps:
-  - task: DotNetCoreInstaller@0
-    inputs:
-      version: '2.2.100' # replace this value with the version that you need for your projec
-  - script: dotnet build
