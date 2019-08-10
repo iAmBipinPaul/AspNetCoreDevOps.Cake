@@ -11,5 +11,7 @@ jobs:
         version: 2.2.108
     - name: Install cake tools
       run: dotnet tool install -g Cake.Tool
+    - name: export cake tools
+      run: export PATH=$HOME/.dotnet/tools:$PATH
     - name: buld with cake
       run: dotnet cake build.cake
